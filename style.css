@@ -1,0 +1,36 @@
+#main-app {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background-color: #996855;
+  display: block;
+}
+
+#heading-area {
+  font-family: monospace;
+  font-size: 40px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  line-height: 1;
+}
+
+#heading {
+  padding-top: 0.5em;
+}
+
+#transport-control-buttons {
+  width: 50%;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+#music-grid {
+  height: 50%;
+}
+
+#footer {
+  height: auto;
+}
