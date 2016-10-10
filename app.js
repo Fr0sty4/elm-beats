@@ -8245,6 +8245,73 @@ var _elm_lang$svg$Svg_Attributes$accumulate = _elm_lang$virtual_dom$VirtualDom$a
 var _elm_lang$svg$Svg_Attributes$accelerate = _elm_lang$virtual_dom$VirtualDom$attribute('accelerate');
 var _elm_lang$svg$Svg_Attributes$accentHeight = _elm_lang$virtual_dom$VirtualDom$attribute('accent-height');
 
+var _user$project$DialKit$drawStopButton = function (msgOnClick) {
+	return A2(
+		_elm_lang$svg$Svg$rect,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$svg$Svg_Attributes$class('transport-button button-decal'),
+				_elm_lang$svg$Svg_Attributes$x('20'),
+				_elm_lang$svg$Svg_Attributes$y('24'),
+				_elm_lang$svg$Svg_Attributes$width('60'),
+				_elm_lang$svg$Svg_Attributes$height('60')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _user$project$DialKit$drawPlayButton = function (msgOnClick) {
+	return A2(
+		_elm_lang$svg$Svg$polygon,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$svg$Svg_Attributes$class('transport-button button-decal'),
+				_elm_lang$svg$Svg_Attributes$points('20,20 100,60 20,100')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _user$project$DialKit$buttonOutline = A2(
+	_elm_lang$svg$Svg$rect,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$svg$Svg_Attributes$class('transport-button-outline')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[]));
+var _user$project$DialKit$renderClearButton = function (msgOnClick) {
+	return A2(
+		_elm_lang$svg$Svg$svg,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$svg$Svg_Attributes$id('clear-button'),
+				_elm_lang$svg$Svg_Attributes$class('transport-button-svg')
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[_user$project$DialKit$buttonOutline]));
+};
+var _user$project$DialKit$renderPlayButton = F3(
+	function (isPlaying, msgOnPlayClicked, msgOnStopClicked) {
+		return A2(
+			_elm_lang$html$Html$button,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$id('play-button'),
+					_elm_lang$html$Html_Attributes$class('transport-button-svg')
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$svg$Svg$svg,
+					_elm_lang$core$Native_List.fromArray(
+						[]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_user$project$DialKit$buttonOutline,
+							isPlaying ? _user$project$DialKit$drawStopButton(msgOnStopClicked) : _user$project$DialKit$drawPlayButton(msgOnPlayClicked)
+						]))
+				]));
+	});
+
 var _user$project$DrumMachine$renderFooter = A2(
 	_elm_lang$html$Html$div,
 	_elm_lang$core$Native_List.fromArray(
@@ -8264,77 +8331,6 @@ var _user$project$DrumMachine$renderBeats = F2(
 			_elm_lang$core$Native_List.fromArray(
 				[]));
 	});
-var _user$project$DrumMachine$drawStopButton = function (isHighlighted) {
-	return isHighlighted ? A2(
-		_elm_lang$svg$Svg$rect,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$svg$Svg_Attributes$x('20'),
-				_elm_lang$svg$Svg_Attributes$y('24'),
-				_elm_lang$svg$Svg_Attributes$width('60'),
-				_elm_lang$svg$Svg_Attributes$height('60'),
-				_elm_lang$svg$Svg_Attributes$fill('#996855'),
-				_elm_lang$svg$Svg_Attributes$stroke('white'),
-				_elm_lang$svg$Svg_Attributes$strokeWidth('4')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[])) : A2(
-		_elm_lang$svg$Svg$rect,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$svg$Svg_Attributes$x('20'),
-				_elm_lang$svg$Svg_Attributes$y('24'),
-				_elm_lang$svg$Svg_Attributes$width('60'),
-				_elm_lang$svg$Svg_Attributes$height('60'),
-				_elm_lang$svg$Svg_Attributes$fill('None'),
-				_elm_lang$svg$Svg_Attributes$stroke('white'),
-				_elm_lang$svg$Svg_Attributes$strokeWidth('4')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
-};
-var _user$project$DrumMachine$drawPlayButton = function (isHighlighted) {
-	return isHighlighted ? A2(
-		_elm_lang$svg$Svg$polygon,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$svg$Svg_Attributes$points('20,24 80,54 20,84'),
-				_elm_lang$svg$Svg_Attributes$fill('#996855'),
-				_elm_lang$svg$Svg_Attributes$stroke('white'),
-				_elm_lang$svg$Svg_Attributes$strokeWidth('4')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[])) : A2(
-		_elm_lang$svg$Svg$polygon,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$svg$Svg_Attributes$points('20,24 80,54 20,84'),
-				_elm_lang$svg$Svg_Attributes$fill('None'),
-				_elm_lang$svg$Svg_Attributes$stroke('white'),
-				_elm_lang$svg$Svg_Attributes$strokeWidth('4')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
-};
-var _user$project$DrumMachine$buttonOutline = function (isHighlighted) {
-	return A2(
-		_elm_lang$svg$Svg$rect,
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$svg$Svg_Attributes$x('0'),
-				_elm_lang$svg$Svg_Attributes$y('4'),
-				_elm_lang$svg$Svg_Attributes$width('100'),
-				_elm_lang$svg$Svg_Attributes$height('100'),
-				_elm_lang$svg$Svg_Attributes$rx('15'),
-				_elm_lang$svg$Svg_Attributes$ry('15'),
-				_elm_lang$svg$Svg_Attributes$stroke('white'),
-				_elm_lang$svg$Svg_Attributes$strokeWidth('4px'),
-				_elm_lang$svg$Svg_Attributes$fill(
-				isHighlighted ? 'white' : 'None')
-			]),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
-};
 var _user$project$DrumMachine$renderHeading = A2(
 	_elm_lang$html$Html$div,
 	_elm_lang$core$Native_List.fromArray(
@@ -8369,22 +8365,6 @@ var _user$project$DrumMachine$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
 		switch (_p0.ctor) {
-			case 'HighlightPlayStopButton':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{playStopButtonHighlighted: _p0._0}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-			case 'HighlightClearButton':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{clearButtonHighlighted: _p0._0}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
 			case 'Play':
 				return {
 					ctor: '_Tuple2',
@@ -8440,68 +8420,26 @@ var _user$project$DrumMachine$Model = F6(
 var _user$project$DrumMachine$Soft = {ctor: 'Soft'};
 var _user$project$DrumMachine$Medium = {ctor: 'Medium'};
 var _user$project$DrumMachine$Hard = {ctor: 'Hard'};
-var _user$project$DrumMachine$HighlightClearButton = function (a) {
-	return {ctor: 'HighlightClearButton', _0: a};
-};
-var _user$project$DrumMachine$renderClearButton = function (isHighlighted) {
+var _user$project$DrumMachine$AddNote = F2(
+	function (a, b) {
+		return {ctor: 'AddNote', _0: a, _1: b};
+	});
+var _user$project$DrumMachine$Clear = {ctor: 'Clear'};
+var _user$project$DrumMachine$Stop = {ctor: 'Stop'};
+var _user$project$DrumMachine$Play = {ctor: 'Play'};
+var _user$project$DrumMachine$renderControlButtons = function (isPlaying) {
 	return A2(
-		_elm_lang$svg$Svg$svg,
+		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$svg$Svg_Attributes$width('120'),
-				_elm_lang$svg$Svg_Attributes$height('120'),
-				_elm_lang$svg$Svg_Attributes$viewBox('0 0 120 120'),
-				_elm_lang$html$Html_Events$onMouseDown(
-				_user$project$DrumMachine$HighlightClearButton(true)),
-				_elm_lang$html$Html_Events$onMouseUp(
-				_user$project$DrumMachine$HighlightClearButton(false)),
-				_elm_lang$html$Html_Events$onMouseLeave(
-				_user$project$DrumMachine$HighlightClearButton(false))
+				_elm_lang$html$Html_Attributes$id('transport-control-buttons')
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_user$project$DrumMachine$buttonOutline(isHighlighted)
+				_user$project$DialKit$renderClearButton(_user$project$DrumMachine$Clear),
+				A3(_user$project$DialKit$renderPlayButton, isPlaying, _user$project$DrumMachine$Play, _user$project$DrumMachine$Stop)
 			]));
 };
-var _user$project$DrumMachine$HighlightPlayStopButton = function (a) {
-	return {ctor: 'HighlightPlayStopButton', _0: a};
-};
-var _user$project$DrumMachine$renderPlayButton = F2(
-	function (isPlaying, isHighlighted) {
-		return A2(
-			_elm_lang$svg$Svg$svg,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$svg$Svg_Attributes$width('120'),
-					_elm_lang$svg$Svg_Attributes$height('120'),
-					_elm_lang$svg$Svg_Attributes$viewBox('0 0 120 120'),
-					_elm_lang$html$Html_Events$onMouseDown(
-					_user$project$DrumMachine$HighlightPlayStopButton(true)),
-					_elm_lang$html$Html_Events$onMouseUp(
-					_user$project$DrumMachine$HighlightPlayStopButton(false)),
-					_elm_lang$html$Html_Events$onMouseLeave(
-					_user$project$DrumMachine$HighlightPlayStopButton(false))
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_user$project$DrumMachine$buttonOutline(isHighlighted),
-					isPlaying ? _user$project$DrumMachine$drawStopButton(isHighlighted) : _user$project$DrumMachine$drawPlayButton(isHighlighted)
-				]));
-	});
-var _user$project$DrumMachine$renderControlButtons = F3(
-	function (isPlaying, playStopButtonHighlighted, clearButtonHighlighted) {
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$id('transport-control-buttons')
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_user$project$DrumMachine$renderClearButton(clearButtonHighlighted),
-					A2(_user$project$DrumMachine$renderPlayButton, isPlaying, playStopButtonHighlighted)
-				]));
-	});
 var _user$project$DrumMachine$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -8512,7 +8450,7 @@ var _user$project$DrumMachine$view = function (model) {
 		_elm_lang$core$Native_List.fromArray(
 			[
 				_user$project$DrumMachine$renderHeading,
-				A3(_user$project$DrumMachine$renderControlButtons, model.isPlaying, model.playStopButtonHighlighted, model.clearButtonHighlighted),
+				_user$project$DrumMachine$renderControlButtons(model.isPlaying),
 				A2(_user$project$DrumMachine$renderBeats, model.musicGrid, model.currentStep),
 				_user$project$DrumMachine$renderFooter
 			]));
@@ -8521,13 +8459,6 @@ var _user$project$DrumMachine$main = {
 	main: _elm_lang$html$Html_App$program(
 		{init: _user$project$DrumMachine$init, view: _user$project$DrumMachine$view, update: _user$project$DrumMachine$update, subscriptions: _user$project$DrumMachine$subscriptions})
 };
-var _user$project$DrumMachine$AddNote = F2(
-	function (a, b) {
-		return {ctor: 'AddNote', _0: a, _1: b};
-	});
-var _user$project$DrumMachine$Clear = {ctor: 'Clear'};
-var _user$project$DrumMachine$Stop = {ctor: 'Stop'};
-var _user$project$DrumMachine$Play = {ctor: 'Play'};
 var _user$project$DrumMachine$Tick = {ctor: 'Tick'};
 
 var Elm = {};

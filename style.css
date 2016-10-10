@@ -34,3 +34,42 @@
 #footer {
   height: auto;
 }
+
+.transport-button-svg {
+  width: 130;
+  height: 130;
+  padding: 4px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.transport-button-outline {
+  x: 2;
+  y: 2;
+  width: 118;
+  height: 118;
+  rx: 15;
+  ry: 15;
+  stroke: white;
+  stroke-width: 4px;
+  fill: transparent;
+}
+
+.transport-button-svg:active .transport-button-outline {
+  fill: white;
+}
+
+.button-decal {
+  fill: none;
+  stroke: white;
+  stroke-width: 4px;
+}
+
+.transport-button-svg:active .button-decal {
+  fill: #996855;
+}
+
+#play-button {
+
+}
